@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tower of Hanoi - Algorithm Complexity Analysis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🗼 Tower of Hanoi</h1>
+        <p class="subtitle">Algorithm Complexity Analysis & Performance Comparison</p>
+
+        <div class="input-section">
+            <div class="input-group">
+                <label for="diskCount">Number of Disks (n):</label>
+                <input type="number" id="diskCount" value="15" min="1" max="35">
+                <button onclick="analyzeAlgorithm()">Analyze</button>
+            </div>
+            <div class="error" id="errorBox"></div>
+            <div class="loading-container" id="loadingContainer">
+                <div class="spinner"></div>
+                <p>Calculating algorithm performance...</p>
+            </div>
+        </div>
+
+        <div class="results-section" id="resultsSection">
+            <div class="result-card recursive">
+                <div class="result-title">
+                    <div class="algorithm-icon">R</div>
+                    Recursive Algorithm
+                </div>
+                <div class="result-item">
+                    <div class="metric">
+                        <div class="metric-label">Total Moves</div>
+                        <div class="metric-value" id="recursiveMoves">-</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Execution Time</div>
+                        <div class="metric-value time" id="recursiveTime">-</div>
+                    </div>
+                </div>
+                <div class="result-item">
+                    <div class="metric">
+                        <div class="metric-label">Complexity</div>
+                        <div class="metric-value">O(2<sup>n</sup>)</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Space</div>
+                        <div class="metric-value">O(n)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-card iterative">
+                <div class="result-title">
+                    <div class="algorithm-icon">I</div>
+                    Iterative Algorithm
+                </div>
+                <div class="result-item">
+                    <div class="metric">
+                        <div class="metric-label">Total Moves</div>
+                        <div class="metric-value" id="iterativeMoves">-</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Execution Time</div>
+                        <div class="metric-value time" id="iterativeTime">-</div>
+                    </div>
+                </div>
+                <div class="result-item">
+                    <div class="metric">
+                        <div class="metric-label">Complexity</div>
+                        <div class="metric-value">O(2<sup>n</sup>)</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Space</div>
+                        <div class="metric-value">O(1)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comparison">
+                <h3>⚡ Performance Comparison</h3>
+                <div class="comparison-item">
+                    <span class="comparison-label">Faster Algorithm</span>
+                    <span class="comparison-values">
+                        <span class="comparison-value" id="fasterAlgo">-</span>
+                    </span>
+                </div>
+                <div class="comparison-item">
+                    <span class="comparison-label">Time Difference</span>
+                    <span class="comparison-values">
+                        <span class="comparison-value" id="timeDifference">-</span>
+                    </span>
+                </div>
+                <div class="comparison-item">
+                    <span class="comparison-label">Speed Ratio</span>
+                    <span class="comparison-values">
+                        <span class="comparison-value" id="speedRatio">-</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h4>📚 About Tower of Hanoi</h4>
+            <ul>
+                <li><strong>Recursive Approach:</strong> Uses the call stack with O(n) space complexity</li>
+                <li><strong>Iterative Approach:</strong> Uses a traditional loop with O(1) space complexity</li>
+                <li><strong>Time Complexity:</strong> Both require O(2<sup>n</sup>) moves</li>
+                <li><strong>Note:</strong> For large values of n, the execution time increases exponentially</li>
+            </ul>
+        </div>
+
+        <div class="automated-test-section">
+            <h3>🧪 Automated Performance Testing</h3>
+            <p>Run comprehensive tests from n=2 to n=30 and compare performance metrics</p>
+            <button class="test-button" onclick="runAutomatedTests()">Run Automated Tests</button>
+            <div class="test-loading" id="testLoading">
+                <div class="spinner"></div>
+                <p>Running tests... <span id="testProgress"></span></p>
+            </div>
+            <div id="testResultsTable"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
