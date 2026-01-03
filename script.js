@@ -8,8 +8,8 @@ function analyzeAlgorithm() {
     loadingContainer.classList.remove('show');
 
     // Validation
-    if (!n || n < 1 || n > 28) {
-        errorBox.textContent = '⚠️ Please enter a number between 1 and 28';
+    if (!n || n < 1 || n > 27) {
+        errorBox.textContent = '⚠️ Please enter a number between 1 and 27';
         errorBox.classList.add('show');
         return;
     }
@@ -199,7 +199,7 @@ async function runAutomatedTests() {
     
     const results = [];
     
-    for (let n = 2; n <= 28; n++) {
+    for (let n = 2; n <= 27; n++) {
         testProgress.textContent = `Testing n=${n}/28`;
         
         // Small delay to allow UI update
@@ -282,4 +282,5 @@ function displayTestResults(results) {
     
     testResultsTable.innerHTML = tableHTML;
 }
+
 
