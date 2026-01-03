@@ -8,8 +8,8 @@ function analyzeAlgorithm() {
     loadingContainer.classList.remove('show');
 
     // Validation
-    if (!n || n < 1 || n > 30) {
-        errorBox.textContent = '⚠️ Please enter a number between 1 and 30';
+    if (!n || n < 1 || n > 28) {
+        errorBox.textContent = '⚠️ Please enter a number between 1 and 28';
         errorBox.classList.add('show');
         return;
     }
@@ -199,8 +199,8 @@ async function runAutomatedTests() {
     
     const results = [];
     
-    for (let n = 2; n <= 30; n++) {
-        testProgress.textContent = `Testing n=${n}/30`;
+    for (let n = 2; n <= 28; n++) {
+        testProgress.textContent = `Testing n=${n}/28`;
         
         // Small delay to allow UI update
         await new Promise(resolve => setTimeout(resolve, 10));
@@ -282,3 +282,4 @@ function displayTestResults(results) {
     
     testResultsTable.innerHTML = tableHTML;
 }
+
